@@ -7,7 +7,7 @@ from .models import Category
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 
-
+# this is form for registrattion
 class RegisterUserFrom(UserCreationForm):
     """Form for creating Users"""
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
