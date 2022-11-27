@@ -4,6 +4,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.dashboard, name='Home'),
+# for signup
     path('signup/', views.register, name='Signup'),
     path('login/', views.login, name='Login'),
 
