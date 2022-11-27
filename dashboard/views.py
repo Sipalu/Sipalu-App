@@ -114,7 +114,7 @@ def register(request):
     }
     return render(request, 'dashboard/register.html', context)
 
-# function for login 
+# function for login users and admin
 def login(request):
     if request.method == 'POST':
         uname = request.POST['username']
@@ -148,18 +148,12 @@ def login(request):
                     messages.error(request, 'Invalid reCAPTCHA. Please try again.')
                     return redirect('/login')
 
-                # return redirect("/signup")
-
-                # return HttpResponse("Success")
-
             elif user.is_staff:
                 auth.login(request, user)
                 messages.success(request, "Welcome to Sipalu Admin Site.")
                 return redirect('/admin')
-                # return HttpResponse("Success")
         else:
             messages.add_message(request, messages.ERROR, "Invalid Username and Password!")
-            # return render(request, 'dashboard/login.html')
             return HttpResponse("Failed")
 
     else:
