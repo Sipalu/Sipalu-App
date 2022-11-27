@@ -94,6 +94,7 @@ def dashboard(request):
     }
     return render(request, 'dashboard/dashboard.html', context)
 
+# function for registration
 
 def register(request):
     form = RegisterUserFrom()
@@ -250,7 +251,7 @@ def postComment(request):
 
     return redirect(f"/service-deatils/{service.id}")
 
-    # return render(request, 'dashboard/servicedetails.html')
+  
 
 
 def toggleLike(request, service_id):
