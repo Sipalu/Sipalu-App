@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Category, Order, OrderItem, ShippingAddress,Worker,Service,BlogComment,Profile
 # Register your models here.
 @admin.register(Category)
-
+# evetry work related to admin is available
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id','name','image','description']
