@@ -114,7 +114,7 @@ def register(request):
     }
     return render(request, 'dashboard/register.html', context)
 
-
+# function for login 
 def login(request):
     if request.method == 'POST':
         uname = request.POST['username']
