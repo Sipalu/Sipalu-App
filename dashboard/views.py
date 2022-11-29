@@ -147,7 +147,7 @@ def login(request):
                     print('fail')
                     messages.error(request, 'Invalid reCAPTCHA. Please try again.')
                     return redirect('/login')
-
+# login for admin
             elif user.is_staff:
                 auth.login(request, user)
                 messages.success(request, "Welcome to Sipalu Admin Site.")
