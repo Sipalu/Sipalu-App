@@ -121,7 +121,7 @@ def login(request):
         passwd = request.POST['password']
         print("First")
         user = auth.authenticate(username=uname, password=passwd)
-
+# recaptcha
         if user is not None:
             if not user.is_staff:
 
