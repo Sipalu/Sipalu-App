@@ -26,7 +26,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.firstname + " " + self.lastname
-
+# class for category
 class Category(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='static/category/images')
