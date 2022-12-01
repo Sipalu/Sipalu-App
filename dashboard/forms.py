@@ -22,7 +22,7 @@ class RegisterUserFrom(UserCreationForm):
         model = User
         fields = ['first_name', 'last_name', 'email', 'username', 'password1', 'password2']
 
-
+# category purpose 
 class CategoryForm(forms.ModelForm):
 
     class Meta:
