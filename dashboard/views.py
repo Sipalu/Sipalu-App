@@ -166,7 +166,7 @@ def login(request):
     else:
         return render(request, 'dashboard/login.html')
 
-
+# function for category
 def category(request):
     categ = Category.objects.all()
     ser_id = request.GET.get('service')
