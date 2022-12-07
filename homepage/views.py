@@ -27,7 +27,7 @@ def profile(request):
     }
     return render(request, 'homepage/profile.html', context)
 
-
+# function for changepassword
 def changepass(request):
     if request.method == "POST":
         fm = PasswordChangeForm(user=request.user, data=request.POST)
