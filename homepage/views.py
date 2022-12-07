@@ -12,7 +12,7 @@ from dashboard.models import Service
 
 # Create your views here.
 
-
+# function for profile
 def profile(request):
     profile = request.user.profile
     print(profile)

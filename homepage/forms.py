@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.models import User
 
-
+# form for profile
 class ProfileForm(ModelForm):
     firstname = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     lastname = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
