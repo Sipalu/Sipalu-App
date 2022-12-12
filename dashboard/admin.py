@@ -7,6 +7,7 @@ from .models import Category, Order, OrderItem, ShippingAddress,Worker,Service,B
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id','name','image','description']
 
+# CRUD operation for Worker
 
 @admin.register(Worker)
 
