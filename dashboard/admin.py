@@ -7,10 +7,13 @@ from .models import Category, Order, OrderItem, ShippingAddress,Worker,Service,B
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id','name','image','description']
 
+
 @admin.register(Worker)
 
 class WorkerAdmin(admin.ModelAdmin):
     list_display = ['id','worker_name','phone','address']
+
+# CRUD operation for Services
 
 @admin.register(Service)
 
