@@ -27,6 +27,7 @@ class ServiceAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'customer','status']
 
+#CRUD for remaining activities
 admin.site.register(BlogComment)
 admin.site.register(OrderItem)
 admin.site.register(Profile)
