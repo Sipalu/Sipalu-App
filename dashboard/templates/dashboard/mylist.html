@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'layout.html' %}
 {% load static %}
 
@@ -47,4 +48,55 @@ Ordered Services
     </div>
 </div>
 </div>
+=======
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+Ordered Services
+{% endblock title %}
+{% block content %}
+
+<section id="category-section" class="container-xxl py-5">
+<div class="container-fluid" style="min-height:300px;">
+    <div class="row">
+        <div class="col mt-4 mb-4">
+            <h1 class="text-center text-uppercase m-4 font-weight-bold">Ordered Services</h1>
+            <div class="card shadow-lg ">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <!-- <th>Service Name</th>
+                            <th>Service Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th>Ordered Date</th> -->
+                            <th>Transaction ID</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody class="align-Activities-center">
+                        {% for item in items %}
+                        <tr >
+                            <td>{{item.customer.first_name}}</td>
+                            <!-- <td>{{item.service.service_name}}</td>
+                            <td>Rs.{{item.service.service_price}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.alltotal}}</td>
+                            <td>{{item.date_added}}</td> -->
+                            <td>{{item.transaction_id}}</td>
+                            <td>{{item.status}}</td>
+                                                    </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+>>>>>>> 550c397da82c84627a5a585ea40baaaeb7077ad9
 {% endblock %}
