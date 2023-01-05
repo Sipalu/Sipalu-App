@@ -178,10 +178,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'gautammanish700@gmail.com'
 EMAIL_HOST_PASSWORD = 'kathmandu1#'
 
-<<<<<<< HEAD
 # recaptcha keys
-=======
->>>>>>> 550c397da82c84627a5a585ea40baaaeb7077ad9
 RECAPTCHA_PUBLIC_KEY = '6Lf1lukdAAAAAN4XwvVi84LdKC0Bxs8dYb4LFDHn'
 RECAPTCHA_PRIVATE_KEY = '6Lf1lukdAAAAAGX18xok6_FoO3-U_WaaGmL1bz3z'
 
