@@ -12,7 +12,7 @@ def profile_pic_directory(self, filename):
     return "user{0}/profile_pic/{1}".format(self.user.username, filename)
 
 class Profile(models.Model):
-      # Model to create profile for users
+      # Model created profile for users
     objects = None
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='profile')
     firstname = models.CharField(max_length=50)
