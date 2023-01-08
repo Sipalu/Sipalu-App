@@ -1,6 +1,7 @@
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 
+#created consumer for notification
 
 class NotificationConsumer(AsyncWebsocketConsumer):
     async def connect(self):

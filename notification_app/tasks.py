@@ -48,3 +48,5 @@ def broadcast_notification(self, data):
         )
 
         raise Ignore()
+
+# Created task for notification  
