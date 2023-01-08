@@ -94,6 +94,7 @@ def dashboard(request):
     }
     return render(request, 'dashboard/dashboard.html', context)
 
+# function for registration
 
 def register(request):
     form = RegisterUserFrom()
@@ -114,14 +115,14 @@ def register(request):
     }
     return render(request, 'dashboard/register.html', context)
 
-# function for login users and admin
+
 def login(request):
     if request.method == 'POST':
         uname = request.POST['username']
         passwd = request.POST['password']
         print("First")
         user = auth.authenticate(username=uname, password=passwd)
-# recaptcha integrated
+
         if user is not None:
             if not user.is_staff:
 
@@ -147,19 +148,25 @@ def login(request):
                     print('fail')
                     messages.error(request, 'Invalid reCAPTCHA. Please try again.')
                     return redirect('/login')
-# login for admin
+
+                # return redirect("/signup")
+
+                # return HttpResponse("Success")
+
             elif user.is_staff:
                 auth.login(request, user)
                 messages.success(request, "Welcome to Sipalu Admin Site.")
                 return redirect('/admin')
+                # return HttpResponse("Success")
         else:
             messages.add_message(request, messages.ERROR, "Invalid Username and Password!")
+            # return render(request, 'dashboard/login.html')
             return HttpResponse("Failed")
 
     else:
         return render(request, 'dashboard/login.html')
 
-
+# function for category
 def category(request):
     categ = Category.objects.all()
     ser_id = request.GET.get('service')
@@ -175,12 +182,8 @@ def category(request):
         cartItems = order.get_cart_items
         service = Service.objects.filter(category=ser_id)
         if request.method == "POST":
-            minPrice = int(request.POST.get("minPrice"))
-            if minPrice and minPrice < 0:
-                minPrice = 0
-            maxPrice = int(request.POST.get("maxPrice"))
-            if maxPrice and maxPrice < 0:
-                maxPrice = 0
+            minPrice = request.POST.get("minPrice")
+            maxPrice = request.POST.get("maxPrice")
             service = service.filter(service_price__gte=minPrice, service_price__lte=maxPrice)
 
         paginator = Paginator(service, 6)
@@ -248,7 +251,7 @@ def postComment(request):
 
     return redirect(f"/service-deatils/{service.id}")
 
-    # return render(request, 'dashboard/servicedetails.html')
+  
 
 
 def toggleLike(request, service_id):
