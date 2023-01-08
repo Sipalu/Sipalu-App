@@ -1,6 +1,7 @@
+<!-- login template for users -->
 {% extends 'layout.html' %}
 {% load static %}
-<!-- this is forlogin  -->
+
 {% block title %}Login{% endblock %}
 
 {% block content %}
@@ -46,6 +47,7 @@
                                               <label class="form-label" for="form2Example1">Password</label>
                                       </div>
                                    </div>
+                                    <!-- recaptcha public key-->
                                   <div class="g-recaptcha" data-sitekey="6Lf1lukdAAAAAN4XwvVi84LdKC0Bxs8dYb4LFDHn"></div>
 
                                     <div class="d-flex justify-content-around">
@@ -62,10 +64,10 @@
                                         </div>
                             </div>
 
-                            <!--  for Sign in button -->
+                            <!-- Sign in button -->
                             <button class="btn btn-primary btn-block my-4" type="submit">Sign in</button>
 
-                            <!-- for Register -->
+                            <!-- Register -->
                             <p>Not a member?
                                 <a href="{% url 'Signup' %}">Register</a></p>
            </form>
