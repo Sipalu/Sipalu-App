@@ -21,11 +21,13 @@ class WorkerAdmin(admin.ModelAdmin):
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ['id','service_name','title','service_price','service_details','status','category','worker']
 
+# CRUD operation for Order
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'customer','status']
 
+#CRUD for remaining activities
 admin.site.register(BlogComment)
 admin.site.register(OrderItem)
 admin.site.register(Profile)

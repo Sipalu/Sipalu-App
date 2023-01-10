@@ -1,4 +1,3 @@
-from django.db import models
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -11,8 +10,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 def profile_pic_directory(self, filename):
     return "user{0}/profile_pic/{1}".format(self.user.username, filename)
 
-class Profile(models.Model):
-      # Model created profile for users
+class Profile(models.Model):  # Model to create profile for users
     objects = None
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, related_name='profile')
     firstname = models.CharField(max_length=50)
@@ -26,7 +24,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.firstname + " " + self.lastname
-# class for category
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='static/category/images')
@@ -81,7 +79,6 @@ class Order(models.Model):
         ('Approved', 'Approved'),
     )
     customer = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
-    service = models.ForeignKey(Service, on_delete=models.SET_NULL, blank=True, null=True)
     complete = models.BooleanField(default=True, null=True, blank=False)
     transaction_id = models.CharField(max_length=230, null=True)
     status = models.CharField(max_length=200, choices=STATUS, null=True)
@@ -144,5 +141,3 @@ class OrderItem(models.Model):
         return alltotal
 
    
-
-
