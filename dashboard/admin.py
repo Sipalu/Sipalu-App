@@ -31,4 +31,3 @@ admin.site.register(OrderItem)
 admin.site.register(Profile)
 admin.site.register(ShippingAddress)
 
-
