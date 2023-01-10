@@ -2,15 +2,19 @@ from django.contrib import admin
 from .models import Category, Order, OrderItem, ShippingAddress,Worker,Service,BlogComment,Profile
 # Register your models here.
 @admin.register(Category)
-# evetry work related to admin is available
 
+# CRUD operation for Category
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id','name','image','description']
+
+# CRUD operation for Worker
 
 @admin.register(Worker)
 
 class WorkerAdmin(admin.ModelAdmin):
     list_display = ['id','worker_name','phone','address']
+
+# CRUD operation for Services
 
 @admin.register(Service)
 
@@ -26,5 +30,4 @@ admin.site.register(BlogComment)
 admin.site.register(OrderItem)
 admin.site.register(Profile)
 admin.site.register(ShippingAddress)
-
 
